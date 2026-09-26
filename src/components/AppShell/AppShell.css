@@ -1,0 +1,477 @@
+/* =========================================================
+   PolarX AppShell — Operational Mission Control Layout
+   ========================================================= */
+
+.polarx-shell {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+/* Sidebar */
+.polarx-sidebar {
+  width: 230px;
+  min-width: 230px;
+  height: 100%;
+  background-color: #0b1118;
+  border-right: 1px solid #1c2736;
+  display: flex;
+  flex-direction: column;
+  color: #c0cad6;
+  z-index: 100;
+  user-select: none;
+}
+
+.sidebar-brand {
+  padding: 16px 18px 12px 18px;
+  border-bottom: 1px solid #1c2736;
+  background: #080d14;
+}
+
+.brand-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-symbol {
+  color: #79a5cb;
+  font-size: 16px;
+}
+
+.brand-title {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #f0f4f8;
+}
+
+.brand-subtitle {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #7c90a6;
+  margin-top: 4px;
+}
+
+.brand-sub-badge {
+  display: inline-block;
+  font-size: 9px;
+  color: #4f6378;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: #0e1622;
+  border-bottom: 1px solid #1c2736;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #4ade80;
+  letter-spacing: 0.5px;
+}
+
+.status-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4f6378;
+  letter-spacing: 1px;
+  padding: 8px 10px 4px 10px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #8c9dae;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.12s, color 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: #141f2d;
+  color: #dce5ef;
+}
+
+.nav-link.active {
+  background-color: #172435;
+  color: #ffffff;
+  border-left-color: #3b82f6;
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 13px;
+  width: 16px;
+  text-align: center;
+  color: #647d96;
+}
+
+.nav-link.active .nav-icon {
+  color: #60a5fa;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+.nav-badge {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.3px;
+}
+
+.nav-badge.critical {
+  background: rgba(220, 38, 38, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.nav-badge.alert {
+  background: rgba(217, 119, 6, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(217, 119, 6, 0.4);
+}
+
+.sidebar-footer {
+  padding: 12px;
+  background: #090e15;
+  border-top: 1px solid #1c2736;
+}
+
+.user-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px 10px 4px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #1c2c3f;
+  color: #93c5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  border: 1px solid #293d54;
+}
+
+.user-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role {
+  font-size: 10px;
+  color: #8198b0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-station {
+  font-size: 9px;
+  color: #50677e;
+  font-family: var(--font-mono);
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  background: #121922;
+  border: 1px solid #222d3b;
+  border-radius: 3px;
+  color: #8c9ba9;
+  font-size: 11px;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.logout-btn:hover {
+  background: #1c2533;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.logout-icon {
+  font-size: 12px;
+}
+
+/* Main wrap */
+.polarx-main-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  background-color: var(--bg-primary);
+}
+
+/* Header */
+.polarx-header {
+  height: var(--header-height);
+  background: #ffffff;
+  border-bottom: 1px solid #d9dfe6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 16px;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.header-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.crumb-root {
+  color: #334155;
+}
+
+.crumb-sep {
+  color: #94a3b8;
+}
+
+.crumb-active {
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+
+.expedition-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.pill-text {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.pill-badge {
+  font-size: 9px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-telemetry-clock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.clock-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.clock-tag {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.clock-val {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.clock-divider {
+  color: #cbd5e1;
+}
+
+.header-stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.chip-label {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.chip-val.status-ok {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.header-alert-bell {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #334155;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.header-alert-bell:hover {
+  background: #f1f5f9;
+}
+
+.bell-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+}
+
+.polarx-content-body {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .expedition-pill {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .polarx-sidebar {
+    position: fixed;
+    top: 0;
+    left: -230px;
+    bottom: 0;
+    transition: left 0.25s ease;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+  }
+  .polarx-sidebar.open {
+    left: 0;
+  }
+  .header-telemetry-clock {
+    display: none;
+  }
+}

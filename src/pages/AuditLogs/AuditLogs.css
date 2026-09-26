@@ -1,0 +1,105 @@
+/* ============================================
+   Audit Logs Page
+   ============================================ */
+
+.audit-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.audit-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Alternating row */
+.audit-table tbody tr.audit-row-alt {
+  background: #f9fafb;
+}
+
+.audit-table tbody tr.audit-row-alt:hover {
+  background: var(--bg-hover);
+}
+
+/* Timestamp column */
+.audit-timestamp {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  white-space: nowrap;
+}
+
+.audit-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.audit-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Module badge */
+.audit-module-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.audit-module-badge.module-cargo {
+  background: var(--accent-blue-light);
+  color: var(--accent-blue);
+  border-color: transparent;
+}
+
+.audit-module-badge.module-inventory {
+  background: var(--accent-teal-light);
+  color: var(--accent-teal);
+  border-color: transparent;
+}
+
+.audit-module-badge.module-emergencies {
+  background: var(--accent-red-light);
+  color: var(--accent-red);
+  border-color: transparent;
+}
+
+.audit-module-badge.module-alerts {
+  background: var(--accent-amber-light);
+  color: var(--accent-amber);
+  border-color: transparent;
+}
+
+.audit-module-badge.module-movements {
+  background: var(--accent-green-light);
+  color: var(--accent-green);
+  border-color: transparent;
+}
+
+.audit-module-badge.module-assets {
+  background: var(--accent-ice-light);
+  color: #2a7d9c;
+  border-color: transparent;
+}
+
+.audit-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
